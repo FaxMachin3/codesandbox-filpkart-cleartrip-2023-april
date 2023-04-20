@@ -1,0 +1,159 @@
+:root {
+  --chat-list-divider: #f0f0f0;
+  --chat-selected: #f1f3f6;
+  --flipkart-blue: #027cd5;
+  --white: #ffffff;
+  --black: #000000;
+  --top-bar-height: 35px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body,
+#root,
+.app-container,
+.chat-window {
+  height: 100%;
+}
+
+input {
+  padding: 0.5rem 0.2rem;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.filter-container,
+.chat-top,
+.chat-input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: var(--top-bar-height);
+}
+
+.chat-top {
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+.chat-top .chat-image {
+  margin: 0 1rem;
+}
+
+.filter-container {
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.chats-container {
+  margin-top: 1rem;
+  height: calc(100% - (35px + 1.5rem));
+  overflow-y: scroll;
+}
+
+.chats-container::-webkit-scrollbar {
+  display: none;
+}
+
+.app-container {
+  display: flex;
+}
+
+.left-panel,
+.right-panel {
+  flex: 1 1 0;
+}
+
+.left-panel {
+  margin: 1rem 0 1rem 1rem;
+  border-right: 2px solid var(--chat-list-divider);
+}
+
+.chat-message-container {
+  overflow-y: scroll;
+  height: calc(100% - (2 * (var(--top-bar-height) + 15px)));
+  padding: 1rem 0;
+  background-color: var(--chat-selected);
+  padding: 0.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-message-container::-webkit-scrollbar {
+  display: none;
+}
+
+.message-card {
+  margin-top: 1rem;
+  border-radius: 5px;
+  padding: 1rem;
+  max-width: 80%;
+}
+
+.message-card.bot {
+  background-color: var(--white);
+  border-top-left-radius: 0;
+  align-self: start;
+}
+
+.message-card.user {
+  align-self: end;
+  border-top-right-radius: 0;
+  background-color: var(--flipkart-blue);
+  color: var(--white);
+}
+
+.chat-card {
+  cursor: pointer;
+  padding: 2rem 0;
+  display: flex;
+  border-bottom: 1px solid var(--chat-list-divider);
+}
+
+.chat-card div {
+  margin-right: 1rem;
+}
+
+.chat-card.chat-selected {
+  background-color: var(--chat-selected);
+}
+
+.order-details {
+  flex-grow: 1;
+}
+
+.order-image,
+.order-date {
+  flex-basis: 30px;
+}
+
+.order-image {
+  margin-left: 1rem;
+}
+
+img {
+  object-fit: contain;
+}
+
+.filter-input {
+  position: relative;
+  font-size: 1rem;
+  border-bottom: 2px solid var(--black);
+}
+
+.no-message {
+  height: 100%;
+  display: grid;
+  place-content: center;
+}
